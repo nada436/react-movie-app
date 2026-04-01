@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MovieCard from './movie.jsx';
-import { MoviesContext } from '../MoviesProvider.jsx';
+import { MoviesContext } from '../context/MoviesProvider.jsx';
 
 const Movies_slider = () => {
   const { moviesList } = useContext(MoviesContext);

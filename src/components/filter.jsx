@@ -1,6 +1,7 @@
 import React from "react";
+import { FilterContext, useFilterContext } from "../context/FilterContext.jsx";
 
-const Filter = ({filterBygenres}) => {
+const Filter = () => {
   const genres = [
   "All",
   "Drama",
@@ -17,6 +18,7 @@ const Filter = ({filterBygenres}) => {
   "Comedy",
   
 ]
+const {filterBygenres}=useFilterContext()
 
   return (
     <div className="px-6 pt-28 text-white bg-black w-[800px]">

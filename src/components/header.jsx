@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from '../assets/logo.png'
 import loupe from '../assets/loupe.png'
+import { Link } from 'react-router-dom';
+import { useFilterContext } from '../context/FilterContext.jsx';
 
-const Header = ({filterBysearch}) => {
+const Header = () => {
+  const {filterBysearch}=useFilterContext()
     return (
        <div className='fixed top-0 left-0 w-full z-100 bg-black text-white'>
 
@@ -11,9 +14,9 @@ const Header = ({filterBysearch}) => {
     <img src={logo} className='w-36 sm:w-48' alt="logo" />
 
     <div className='flex gap-4 text-sm sm:text-lg'>
-      <a href="#" className='hover:text-yellow-400'>home</a>
-      <a href="#" className='hover:text-yellow-400'>wishlist</a>
-      <a href="#" className='hover:text-yellow-400'>top rated</a>
+      <Link to="/" className='hover:text-yellow-400'>home</Link>
+      <Link to="/wishlist" className='hover:text-yellow-400'>wishlist</Link>
+      <Link to="/top_rated" className='hover:text-yellow-400'>top rated</Link>
     </div>
 
     <div className='relative'>

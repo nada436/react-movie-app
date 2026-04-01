@@ -1,33 +1,40 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/header';
 import Footer from './components/footer';
-import Movies from './components/movies_slider';
-import Movies_list from './components/movies_list';
-import Filter from './components/filter';
-import  MoviesProvider from './MoviesProvider'
+import MoviesProvider from './context/MoviesProvider'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import Wishlist from './pages/WishList';
+import Toprated from './pages/TopRated';
+import MovieDetails from './pages/MovieDetails';
+import MovieTrailer from './pages/MovieTrailer';
+import Error from './pages/Error';
+import Layout from './Layout';
+import FilterContextprovider from './context/FilterContext';
 
 function App() {
-   const [search, setSearch] = useState("");
-  const [genre, setGenre] = useState("");
-const filterBysearch = (value) => {
-  setSearch(value);
-}
-const filterBygenres = (genre) => {
-  const finalGenre = genre === "All" ? "" : genre;
-  console.log(finalGenre);
-  setGenre(finalGenre);
-}
-
   return (
-   <>
-    <Header filterBysearch={filterBysearch}></Header>
-    <MoviesProvider>
-    <Movies></Movies>
-    <Filter filterBygenres={filterBygenres}></Filter>
-    <Movies_list search={search} genre={genre}></Movies_list>
-    </MoviesProvider>
-    <Footer></Footer>
+    <>
+    
+      <MoviesProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* Routes WITH Header + Filter */}
+            <Route element={<Layout/>}>
+              <Route path='/' element={<Home />} />
+              <Route path='/wishlist' element={<Wishlist />} />
+              <Route path='/top_rated' element={<Toprated />} />
+            </Route>
+
+            {/* Routes WITHOUT Header + Filter */}
+            <Route path='/MovieDetails/:id' element={<MovieDetails />} />
+            <Route path='/MovieTrailer' element={<MovieTrailer />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </MoviesProvider>
+     
+      <Footer></Footer>
     </>
   )
 }
