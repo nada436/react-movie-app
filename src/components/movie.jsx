@@ -58,7 +58,7 @@ const MovieCard = ({ movie, index, hovered, no_rotate }) => {
   `;
 
   return (
-     <Link to={`/MovieDetails/${movie.id}`}>
+    
     <div
       className={`
         relative w-[150px] sm:w-[180px] lg:w-[220px]
@@ -86,6 +86,7 @@ const MovieCard = ({ movie, index, hovered, no_rotate }) => {
           <i className="fa-solid fa-star text-[14px]" style={{ color: wished ? '#FFD700' : 'rgba(255,255,255,0.3)' }} />
         </span>
       </div>
+       <Link to={`/MovieDetails/${movie.id}`}>
 
       {/* Body */}
       <div className="flex flex-col flex-1 overflow-hidden px-2.5 lg:px-3.5 pt-2 pb-2.5">
@@ -119,8 +120,9 @@ const MovieCard = ({ movie, index, hovered, no_rotate }) => {
           </div>
         </div>
       </div>
+         </Link>
     </div>
-   </Link>
+
   );
 };
 
