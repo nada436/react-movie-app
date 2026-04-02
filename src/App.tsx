@@ -7,7 +7,6 @@ import Home from './pages/home';
 import Wishlist from './pages/WishList';
 import Toprated from './pages/TopRated';
 import MovieDetails_page from './pages/MovieDetails';
-import MovieTrailer from './pages/MovieTrailer';
 import Error from './pages/Error';
 import Layout from './Layout';
 import FilterContextprovider from './context/FilterContext';
