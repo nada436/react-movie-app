@@ -21,10 +21,10 @@ const Filter = () => {
 const {filterBygenres}=useFilterContext()
 
   return (
-    <div className="px-6 pt-28 text-white bg-black w-[800px]">
+    <div className="px-6 pt-32 text-white bg-black w-[400px] lg:w-[800px] ">
       
       {/* Title */}
-      <h1 className="text-4xl font-bold mb-2">
+      <h1 className="text-4xl font-bold ">
         Discover great films
       </h1>
 

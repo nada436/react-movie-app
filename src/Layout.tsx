@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <FilterContextprovider>
       <Header />
-      <Filter />
+
       <Outlet />
     </FilterContextprovider>
   );

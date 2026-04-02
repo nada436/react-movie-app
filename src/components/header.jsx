@@ -7,11 +7,11 @@ import { useFilterContext } from '../context/FilterContext.jsx';
 const Header = () => {
   const {filterBysearch}=useFilterContext()
     return (
-       <div className='fixed top-0 left-0 w-full z-100 bg-black text-white'>
+       <div className='fixed top-0 left-0 w-full z-100 bg-black text-white  '>
 
   <div className='flex flex-wrap items-center justify-between px-4 py-2 gap-4'>
 
-    <img src={logo} className='w-36 sm:w-48' alt="logo" />
+    <img src={logo} className='w-36 lg:w-48' alt="logo" />
 
     <div className='flex gap-4 text-sm sm:text-lg'>
       <Link to="/" className='hover:text-yellow-400'>home</Link>
@@ -19,7 +19,7 @@ const Header = () => {
       <Link to="/top_rated" className='hover:text-yellow-400'>top rated</Link>
     </div>
 
-    <div className='relative'>
+    <div className='relative '>
       <img src={loupe} className="w-4 absolute top-2 left-2" />
       <input
         type="text"
@@ -29,7 +29,7 @@ const Header = () => {
     </div>
 
   </div>
-  <hr className='border-white/20'/>
+ 
 
 </div>
     );

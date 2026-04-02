@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import Wishlist from './pages/WishList';
 import Toprated from './pages/TopRated';
-import MovieDetails from './pages/MovieDetails';
+import MovieDetails_page from './pages/MovieDetails';
 import MovieTrailer from './pages/MovieTrailer';
 import Error from './pages/Error';
 import Layout from './Layout';
@@ -14,28 +14,25 @@ import FilterContextprovider from './context/FilterContext';
 
 function App() {
   return (
-    <>
-    
+    <div className="flex flex-col min-h-screen">
       <MoviesProvider>
         <BrowserRouter>
-          <Routes>
-            {/* Routes WITH Header + Filter */}
-            <Route element={<Layout/>}>
-              <Route path='/' element={<Home />} />
-              <Route path='/wishlist' element={<Wishlist />} />
-              <Route path='/top_rated' element={<Toprated />} />
-            </Route>
-
-            {/* Routes WITHOUT Header + Filter */}
-            <Route path='/MovieDetails/:id' element={<MovieDetails />} />
-            <Route path='/MovieTrailer' element={<MovieTrailer />} />
-            <Route path='*' element={<Error />} />
-          </Routes>
+          <div className="flex-1">
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path='/' element={<Home />} />
+                <Route path='/wishlist' element={<Wishlist />} />
+                <Route path='/top_rated' element={<Toprated />} />
+              </Route>
+              <Route path='/MovieDetails/:id' element={<MovieDetails_page />} />
+              <Route path='/MovieTrailer' element={<MovieTrailer />} />
+              <Route path='*' element={<Error />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </MoviesProvider>
-     
-      <Footer></Footer>
-    </>
+      <Footer />
+    </div>
   )
 }
 
