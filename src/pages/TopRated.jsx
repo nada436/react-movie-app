@@ -1,6 +1,6 @@
 import React from 'react';
 import Movies_list from '../components/movies_list.jsx';
-import Filter from '../components/Filter.jsx';
+import Filter from '../components/filter.jsx' 
 const Toprated = () => {
     return (
         <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Movies_slider from '../components/movies_slider.jsx';
 import Movies_list from '../components/movies_list.jsx';
-import Filter from '../components/Filter.jsx';
+import Filter from '../components/filter.jsx' 
 
 const Home = () => {
     return (

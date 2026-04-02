@@ -25,7 +25,6 @@ function App() {
                 <Route path='/top_rated' element={<Toprated />} />
               </Route>
               <Route path='/MovieDetails/:id' element={<MovieDetails_page />} />
-              <Route path='/MovieTrailer' element={<MovieTrailer />} />
               <Route path='*' element={<Error />} />
             </Routes>
           </div>
