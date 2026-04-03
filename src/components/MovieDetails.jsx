@@ -23,7 +23,9 @@ const MovieDetails = () => {
 
 
   useEffect(() => {
+    
     if (!movie) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     const API_KEY = import.meta.env.VITE_YOUTUBE_KEY; 
     fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(movie.title + ' official trailer')}&type=video&key=${API_KEY}`
@@ -42,7 +44,7 @@ const MovieDetails = () => {
 
   return (
     <div
-      className="min-h-screen bg-black text-white"
+      className="min-h-screen bg-black text-white snap-center "
       style={{
         opacity: mounted ? 1 : 0,
         transform: mounted ? 'translateY(0)' : 'translateY(32px)',
@@ -111,8 +113,8 @@ const MovieDetails = () => {
           </div>
 
           <div>
-            <h3 className="text-[11px] tracking-[0.2em] uppercase text-yellow-400 mb-2">Plot</h3>
-            <p className="text-zinc-300 text-sm leading-relaxed max-w-2xl">{movie.plot}</p>
+            <h3 className="text-[17px] tracking-[0.2em] uppercase text-yellow-400 mb-2">Plot</h3>
+            <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl">{movie.plot}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
@@ -126,7 +128,7 @@ const MovieDetails = () => {
             ].map(({ label, value }) => (
               <div key={label} className="border-l-2 border-yellow-400/30 pl-4">
                 <p className="text-[10px] tracking-[0.2em] uppercase text-zinc-600 mb-1">{label}</p>
-                <p className="text-sm text-zinc-300 leading-snug">{value || '—'}</p>
+                <p className="text-lg text-zinc-300 leading-snug">{value || '—'}</p>
               </div>
             ))}
           </div>
